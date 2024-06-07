@@ -27,7 +27,7 @@ function App() {
         <div className="note__container">
           <NoteStatus notes={notes} />
 
-          <NoteList />
+          <NoteList notes={notes} sortBy={sortBy} />
         </div>
       </div>
     </div>

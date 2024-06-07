@@ -77,6 +77,11 @@
   color: #f1f5f9;
   border-radius: 20px;
 }
+.note__list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
 .empty-note-status-heading {
   text-align: center;
 }
