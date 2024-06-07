@@ -3,6 +3,25 @@
   max-width: 1024px;
   margin: auto;
 }
+.note__header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid #94a3b8;
+}
+.note__header .note-heading {
+  color: #334155;
+}
+.note__header .note-sort {
+  border: 1px solid #64748b;
+  border-radius: 12px;
+  padding: 0.5rem 1rem;
+  font-size: 15px;
+}
+.sort__option {
+  font-size: 15px;
+}
 .note__body {
   display: flex;
   justify-content: space-between;
