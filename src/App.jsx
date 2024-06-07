@@ -6,14 +6,23 @@ import NoteList from "./components/NoteList";
 import NoteStatus from "./components/NoteStatus";
 
 function App() {
+  const [notes, setNotes] = useState([]);
   const [sortBy, setSortBy] = useState("latest");
+
+  const handleAddNote = (newNote) => {
+    setNotes((prevNotes) => [...prevNotes, newNote]);
+  };
 
   return (
     <div className="note">
-      <NoteHeader sortBy={sortBy} onSort={(e) => setSortBy(e.target.value)} />
+      <NoteHeader
+        notes={notes}
+        sortBy={sortBy}
+        onSort={(e) => setSortBy(e.target.value)}
+      />
 
       <div className="note__body">
-        <NoteForm />
+        <NoteForm onAddNote={handleAddNote} />
 
         <div className="note__container">
           <NoteStatus />

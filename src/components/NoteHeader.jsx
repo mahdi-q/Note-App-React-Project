@@ -1,7 +1,7 @@
-function NoteHeader({ sortBy, onSort }) {
+function NoteHeader({ notes, sortBy, onSort }) {
   return (
     <div className="note__header">
-      <h1 className="note-heading">My Notes (0)</h1>
+      <h1 className="note-heading">My Notes ({notes.length})</h1>
 
       <select className="note-sort" value={sortBy} onChange={onSort}>
         <option value="latest" className="sort__option">

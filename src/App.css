@@ -28,6 +28,36 @@
   margin-top: 3rem;
   gap: 2rem;
 }
+.note__form {
+  width: 30%;
+}
+.note-form__heading {
+  color: #334155;
+  font-size: 26px;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.note-form__body {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.note-title,
+.note-desc {
+  padding: 1rem 1.5rem;
+  border-radius: 10px;
+  border: none;
+  background-color: white;
+  font-size: 16px;
+}
+.note-btn {
+  padding: 1rem 1.5rem;
+  font-size: 16px;
+  background-color: #4f46e5;
+  border-radius: 10px;
+  color: white;
+  font-weight: bold;
+}
 .note__container {
   width: 60%;
 }
