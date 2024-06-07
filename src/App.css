@@ -61,3 +61,22 @@
 .note__container {
   width: 60%;
 }
+.note__status {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.7rem;
+}
+.note-tag .text {
+  color: #94a3b8;
+}
+.note-tag .number {
+  margin-left: 5px;
+  padding: 3px 4px;
+  background-color: #94a3b8;
+  color: #f1f5f9;
+  border-radius: 20px;
+}
+.empty-note-status-heading {
+  text-align: center;
+}

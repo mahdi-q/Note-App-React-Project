@@ -25,7 +25,7 @@ function App() {
         <NoteForm onAddNote={handleAddNote} />
 
         <div className="note__container">
-          <NoteStatus />
+          <NoteStatus notes={notes} />
 
           <NoteList />
         </div>
