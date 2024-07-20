@@ -82,6 +82,52 @@
   flex-direction: column;
   gap: 1.5rem;
 }
+.note__item {
+  background-color: white;
+  padding: 1rem;
+  border-radius: 15px;
+}
+.note__item.completed .note-item__info .title {
+  text-decoration: line-through;
+  opacity: 50%;
+}
+.note-item__content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #cbd5e1;
+}
+.note-item__info {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0.8rem;
+}
+.note-item__info .title {
+  font-weight: 800;
+  margin-bottom: 0.6rem;
+}
+.note-item__info .desc {
+  color: #94a3b8;
+  font-weight: 300;
+}
+.note-item__btns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.note-item__btns .remove {
+  background-color: transparent;
+  font-size: 16px;
+}
+.note-item__btns .check {
+  width: 18px;
+  height: 18px;
+}
+.note-item__footer {
+  margin-top: 0.8rem;
+  color: #cbd5e1;
+}
 .empty-note-status-heading {
   text-align: center;
 }

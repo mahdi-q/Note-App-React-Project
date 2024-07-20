@@ -13,6 +13,20 @@ function App() {
     setNotes((prevNotes) => [...prevNotes, newNote]);
   };
 
+  const handleDeleteNote = (id) => {
+    setNotes((prevNotes) => prevNotes.filter((n) => n.id !== id));
+  };
+
+  const handleCompletedNote = (e) => {
+    const noteId = Number(e.target.value);
+
+    setNotes((prevNotes) =>
+      prevNotes.map((note) =>
+        note.id === noteId ? { ...note, completed: !note.completed } : note
+      )
+    );
+  };
+
   return (
     <div className="note">
       <NoteHeader
@@ -25,9 +39,14 @@ function App() {
         <NoteForm onAddNote={handleAddNote} />
 
         <div className="note__container">
-          <NoteStatus notes={notes} />
+          <NoteStatus notes={notes}/>
 
-          <NoteList notes={notes} sortBy={sortBy} />
+          <NoteList
+            notes={notes}
+            sortBy={sortBy}
+            onDeleteNote={handleDeleteNote}
+            onCompletedNote={handleCompletedNote}
+          />
         </div>
       </div>
     </div>
