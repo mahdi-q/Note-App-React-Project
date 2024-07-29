@@ -1,6 +1,9 @@
+import { useNotes } from "../contexts/NotesCotext";
 import Message from "./Message";
 
-function NoteStatus({ notes }) {
+function NoteStatus() {
+  const notes = useNotes();
+  
   const allNotes = notes.length;
   const completedNotes = notes.filter((note) => note.completed).length;
   const unCompletedNote = allNotes - completedNotes;
