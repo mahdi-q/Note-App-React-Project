@@ -1,30 +1,47 @@
-import { useState } from "react";
+import { useReducer, useState } from "react";
 import "./App.css";
 import NoteForm from "./components/NoteForm";
 import NoteHeader from "./components/NoteHeader";
 import NoteList from "./components/NoteList";
 import NoteStatus from "./components/NoteStatus";
 
+function noteReducer(notes, { type, payload }) {
+  switch (type) {
+    case "add": {
+      return [...notes, payload];
+    }
+
+    case "delete": {
+      return notes.filter((note) => note.id !== payload);
+    }
+
+    case "completed": {
+      return notes.map((note) =>
+        note.id === payload ? { ...note, completed: !note.completed } : note
+      );
+    }
+
+    default:
+      throw new Error(`Unknown action ${type}`);
+  }
+}
+
 function App() {
-  const [notes, setNotes] = useState([]);
+  const [notes, dispatch] = useReducer(noteReducer, []);
   const [sortBy, setSortBy] = useState("latest");
 
   const handleAddNote = (newNote) => {
-    setNotes((prevNotes) => [...prevNotes, newNote]);
+    dispatch({ type: "add", payload: newNote });
   };
 
   const handleDeleteNote = (id) => {
-    setNotes((prevNotes) => prevNotes.filter((n) => n.id !== id));
+    dispatch({ type: "delete", payload: id });
   };
 
   const handleCompletedNote = (e) => {
     const noteId = Number(e.target.value);
 
-    setNotes((prevNotes) =>
-      prevNotes.map((note) =>
-        note.id === noteId ? { ...note, completed: !note.completed } : note
-      )
-    );
+    dispatch({ type: "completed", payload: noteId });
   };
 
   return (
@@ -39,7 +56,7 @@ function App() {
         <NoteForm onAddNote={handleAddNote} />
 
         <div className="note__container">
-          <NoteStatus notes={notes}/>
+          <NoteStatus notes={notes} />
 
           <NoteList
             notes={notes}
