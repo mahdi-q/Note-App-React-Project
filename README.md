@@ -63,11 +63,12 @@ To start using the Note App, follow the steps below:
 
 This project explores several important concepts from the React library:
 
-- **State and Props**: Understand and use state and props to manage data and pass it between components.
 - **Lifting State Up**: Share state between components by lifting it up to the nearest common ancestor.
 - **Derived States**: Derive state values from props or other state variables.
+- **useReducer Hook**: Manages complex state logic with a reducer function.
 - **Children Props**: Pass components as props to other components.
-- **Callback Method for Updating State**: Use callback functions to update state based on previous state values.
+- **useContext Hook**: Access context values without prop drilling.
+- **Custom Hook**: Reusable function that encapsulates logic using hooks.
 
 ## Contact Information
 
