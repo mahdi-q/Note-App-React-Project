@@ -7,22 +7,7 @@
 
 
 
-.note__status {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 1.7rem;
-}
-.note-tag .text {
-  color: #94a3b8;
-}
-.note-tag .number {
-  margin-left: 5px;
-  padding: 3px 4px;
-  background-color: #94a3b8;
-  color: #f1f5f9;
-  border-radius: 20px;
-}
+
 .note__list {
   display: flex;
   flex-direction: column;
@@ -74,6 +59,4 @@
   margin-top: 0.8rem;
   color: #cbd5e1;
 }
-.empty-note-status-heading {
-  text-align: center;
-}
+
