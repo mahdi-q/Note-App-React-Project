@@ -69,6 +69,8 @@ This project explores several important concepts from the React library:
 - **Children Props**: Pass components as props to other components.
 - **useContext Hook**: Access context values without prop drilling.
 - **Custom Hook**: Reusable function that encapsulates logic using hooks.
+- **CSS Modules**: Use CSS Module to have the modular styles.
+- **Tests**: Use Vitest and React-Testing-Library for developing project tests.
 
 ## Contact Information
 
