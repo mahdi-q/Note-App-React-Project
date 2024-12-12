@@ -1,4 +1,6 @@
-import { useNotes, useNotesDispatch } from "../contexts/NotesCotext";
+import { useNotes, useNotesDispatch } from "../../contexts/NotesCotext";
+import noteListStyles from "./noteList.module.css";
+import noteItemStyles from "./noteItem.module.css";
 
 function NoteList({ sortBy }) {
   const notes = useNotes();
@@ -21,7 +23,7 @@ function NoteList({ sortBy }) {
     );
 
   return (
-    <ul className="note__list">
+    <ul className={noteListStyles.noteList}>
       {sortedNotes.map((note) => (
         <NoteItem key={note.id} note={note} />
       ))}
@@ -37,23 +39,27 @@ function NoteItem({ note }) {
   return (
     <li
       data-testid="note item"
-      className={`note__item ${note.completed ? "completed" : ""}`}
+      className={`
+          ${noteItemStyles.noteItem} 
+          ${note.completed ? noteItemStyles.completed : ""}
+        `}
     >
-      <div className="note-item__content">
-        <div className="note-item__info">
-          <span className="title">{note.title}</span>
-          <span className="desc">{note.description}</span>
+      <div className={noteItemStyles.noteItemContent}>
+        <div className={noteItemStyles.noteItemInfo}>
+          <span className={noteItemStyles.title}>{note.title}</span>
+          <span className={noteItemStyles.desc}>{note.description}</span>
         </div>
 
-        <div className="note-item__btns">
+        <div className={noteItemStyles.noteItemBtns}>
           <button
             data-testid="remove"
             onClick={() => dispatch({ type: "delete", payload: note.id })}
-            className="btn remove"
+            className={`btn ${noteItemStyles.remove}`}
           >
             ❌
           </button>
           <input
+            className={noteItemStyles.check}
             onChange={(e) => {
               const noteId = Number(e.target.value);
               dispatch({ type: "completed", payload: noteId });
@@ -63,12 +69,11 @@ function NoteItem({ note }) {
             id={note.id}
             value={note.id}
             checked={note.completed}
-            className="check"
           ></input>
         </div>
       </div>
 
-      <div className="note-item__footer">
+      <div className={noteItemStyles.noteItemFooter}>
         {new Date(note.createdAt).toLocaleDateString("en-US", {
           day: "numeric",
           month: "long",

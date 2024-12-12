@@ -1,5 +1,5 @@
 import NoteForm from "../NoteForm/NoteForm";
-import NoteList from "../NoteList";
+import NoteList from "../NoteList/NoteList";
 import NoteStatus from "../NoteStatus/NoteStatus";
 import noteAppStyles from "./noteApp.module.css";
 
