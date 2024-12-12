@@ -1,9 +1,21 @@
 .noteBody {
   display: flex;
   justify-content: space-between;
-  margin-top: 3rem;
+  margin-top: 2rem;
   gap: 2rem;
 }
 .noteContainer {
   width: 60%;
+}
+
+@media screen and (max-width: 700px) {
+  .noteBody{
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .noteContainer{
+    width: 100%;
+    border-top: 1px solid #64748b;
+    padding-top: 2rem;
+  }
 }

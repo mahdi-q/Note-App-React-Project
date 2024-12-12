@@ -17,3 +17,10 @@
 .sortOption {
   font-size: 15px;
 }
+
+@media screen and (max-width: 700px) {
+  .noteHeader {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+}
