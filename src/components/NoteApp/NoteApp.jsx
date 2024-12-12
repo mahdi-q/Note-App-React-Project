@@ -1,7 +1,7 @@
-import NoteForm from "../NoteForm";
+import NoteForm from "../NoteForm/NoteForm";
 import NoteList from "../NoteList";
 import NoteStatus from "../NoteStatus";
-import noteAppStyles from "./noteApp.module.css"
+import noteAppStyles from "./noteApp.module.css";
 
 function NoteApp({ sortBy }) {
   return (

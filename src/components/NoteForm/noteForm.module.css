@@ -1,0 +1,30 @@
+.noteForm {
+  width: 30%;
+}
+.noteFormHeading {
+  color: #334155;
+  font-size: 26px;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.noteFormBody {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.noteTitle,
+.noteDesc {
+  padding: 1rem 1.5rem;
+  border-radius: 10px;
+  border: none;
+  background-color: white;
+  font-size: 16px;
+}
+.noteBtn {
+  padding: 1rem 1.5rem;
+  font-size: 16px;
+  background-color: #4f46e5;
+  border-radius: 10px;
+  color: white;
+  font-weight: bold;
+}

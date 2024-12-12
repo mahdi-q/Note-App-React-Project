@@ -1,9 +1,10 @@
 import { useState } from "react";
-import { useNotesDispatch } from "../contexts/NotesCotext";
+import { useNotesDispatch } from "../../contexts/NotesCotext";
+import noteFormStyles from "./noteForm.module.css";
 
 function NoteForm() {
   const dispatch = useNotesDispatch();
-  
+
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
 
@@ -26,25 +27,25 @@ function NoteForm() {
   };
 
   return (
-    <div className="note__form">
-      <h2 className="note-form__heading">Add New Note</h2>
+    <div className={noteFormStyles.noteForm}>
+      <h2 className={noteFormStyles.noteFormHeading}>Add New Note</h2>
 
-      <form onSubmit={handleSubmit} className="note-form__body">
+      <form onSubmit={handleSubmit} className={noteFormStyles.noteFormBody}>
         <input
+          className={noteFormStyles.noteTitle}
           value={title}
           onChange={(e) => setTitle(e.target.value)}
           type="text"
-          className="note-title"
           placeholder="Note Title ..."
         />
         <input
+          className={noteFormStyles.noteDesc}
           value={description}
           onChange={(e) => setDescription(e.target.value)}
           type="text"
-          className="note-desc"
           placeholder="Note Description ..."
         />
-        <button type="submit" className="btn note-btn">
+        <button type="submit" className={`btn ${noteFormStyles.noteBtn}`}>
           Add New Note
         </button>
       </form>
