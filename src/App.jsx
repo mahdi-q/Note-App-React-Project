@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 
-import NoteApp from "./components/NoteApp";
+import NoteApp from "./components/NoteApp/NoteApp";
 import AppProviders from "./Providers/AppProviders";
 import NoteHeader from "./components/NoteHeader/NoteHeader";
 

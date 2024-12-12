@@ -4,12 +4,7 @@
   margin: auto;
 }
 
-.note__body {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 3rem;
-  gap: 2rem;
-}
+
 .note__form {
   width: 30%;
 }
@@ -40,9 +35,7 @@
   color: white;
   font-weight: bold;
 }
-.note__container {
-  width: 60%;
-}
+
 .note__status {
   display: flex;
   justify-content: space-between;
