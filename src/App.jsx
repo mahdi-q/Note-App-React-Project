@@ -1,8 +1,9 @@
 import { useState } from "react";
 import "./App.css";
-import NoteHeader from "./components/NoteHeader";
+
 import NoteApp from "./components/NoteApp";
 import AppProviders from "./Providers/AppProviders";
+import NoteHeader from "./components/NoteHeader/NoteHeader";
 
 function App() {
   const [sortBy, setSortBy] = useState("latest");
