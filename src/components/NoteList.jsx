@@ -35,7 +35,10 @@ function NoteItem({ note }) {
   const dispatch = useNotesDispatch();
 
   return (
-    <li className={`note__item ${note.completed ? "completed" : ""}`}>
+    <li
+      data-testid="note item"
+      className={`note__item ${note.completed ? "completed" : ""}`}
+    >
       <div className="note-item__content">
         <div className="note-item__info">
           <span className="title">{note.title}</span>
@@ -44,6 +47,7 @@ function NoteItem({ note }) {
 
         <div className="note-item__btns">
           <button
+            data-testid="remove"
             onClick={() => dispatch({ type: "delete", payload: note.id })}
             className="btn remove"
           >
