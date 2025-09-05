@@ -1,18 +1,24 @@
 import { useNotes } from "../../contexts/NotesCotext";
+import type { SortByType } from "../../types/SortByType";
 import noteHeaderStyles from "./noteHeader.module.css";
 
-function NoteHeader({ sortBy, onSort }) {
+type NoteHeaderProps = {
+  sortBy: SortByType;
+  onSort: React.Dispatch<React.SetStateAction<SortByType>>;
+};
+
+function NoteHeader({ sortBy, onSort }: NoteHeaderProps) {
   const notes = useNotes();
   return (
     <div className={noteHeaderStyles.noteHeader}>
       <h1 className={noteHeaderStyles.noteHeading}>
-        My Notes ({notes.length})
+        My Notes ({notes?.length})
       </h1>
 
       <select
         className={noteHeaderStyles.noteSort}
         value={sortBy}
-        onChange={onSort}
+        onChange={(e) => onSort(e.target.value as SortByType)}
       >
         <option value="latest" className={noteHeaderStyles.sortOption}>
           sort based on latest notes
