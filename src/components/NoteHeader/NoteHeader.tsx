@@ -9,6 +9,7 @@ type NoteHeaderProps = {
 
 function NoteHeader({ sortBy, onSort }: NoteHeaderProps) {
   const notes = useNotes();
+
   return (
     <div className={noteHeaderStyles.noteHeader}>
       <h1 className={noteHeaderStyles.noteHeading}>

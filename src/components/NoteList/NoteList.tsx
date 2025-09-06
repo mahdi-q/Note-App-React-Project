@@ -7,20 +7,21 @@ function NoteList({ sortBy }: { sortBy: SortByType }) {
 
   let sortedNotes = notes;
 
-  if (sortBy === "latest")
+  if (sortBy === "latest") {
     sortedNotes = [...notes].sort(
       (a, b) =>
-        new Date(b.createdAt).getDate() - new Date(a.createdAt).getDate()
+        new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
     );
-  else if (sortBy === "earliest")
+  } else if (sortBy === "earliest") {
     sortedNotes = [...notes].sort(
       (a, b) =>
-        new Date(a.createdAt).getDate() - new Date(b.createdAt).getDate()
+        new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime()
     );
-  else if (sortBy === "completed")
+  } else if (sortBy === "completed") {
     sortedNotes = [...notes].sort(
       (a, b) => Number(a.completed) - Number(b.completed)
     );
+  }
 
   return (
     <ul className={noteListStyles.noteList}>
