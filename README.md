@@ -1,6 +1,6 @@
 # Note App React Project
 
-A web application for writing and organizing your notes, developed using the React.js library.
+A web application for writing and organizing your notes, developed using the React.js library and TypeScript.
 
 ## Table of Contents
 
@@ -19,21 +19,21 @@ A web application for writing and organizing your notes, developed using the Rea
 ### Steps
 
 1. Clone the repository:
-    ```bash
-    git clone https://github.com/mahdi-q/Note-App-React-Project.git
-    ```
+   ```bash
+   git clone https://github.com/mahdi-q/Note-App-React-Project.git
+   ```
 2. Navigate to the project directory:
-    ```bash
-    cd Note-App-React-Project
-    ```
+   ```bash
+   cd Note-App-React-Project
+   ```
 3. Install the dependencies:
-    ```bash
-    npm install
-    ```
+   ```bash
+   npm install
+   ```
 4. Run the app:
-    ```bash
-    npm run dev
-    ```
+   ```bash
+   npm run dev
+   ```
 5. Click on the link provided in the terminal to open the app in your browser.
 
 ## Usage
