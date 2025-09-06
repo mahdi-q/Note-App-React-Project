@@ -43,10 +43,10 @@ function NoteItem({ note }: { note: NoteType }) {
 
   return (
     <li
-      data-testid="note item"
+      data-testid="note-item"
       className={`
           ${noteItemStyles.noteItem} 
-          ${note.completed ? noteItemStyles.completed : ""}
+          ${note.completed ? `${noteItemStyles.completed} completed` : ""}
         `}
     >
       <div className={noteItemStyles.noteItemContent}>
