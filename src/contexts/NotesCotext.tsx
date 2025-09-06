@@ -7,21 +7,14 @@ import {
   type ActionDispatch,
   type ReactNode,
 } from "react";
+import type { NoteType } from "../types/NoteType";
 
-type Note = {
-  id: string;
-  title: string;
-  description: string;
-  completed: boolean;
-  createdAt: string;
-};
-
-type AddAction = { type: "add"; payload: Note };
-type DeleteAction = { type: "delete"; payload: string };
-type CompletedAction = { type: "completed"; payload: string };
+type AddAction = { type: "add"; payload: NoteType };
+type DeleteAction = { type: "delete"; payload: number };
+type CompletedAction = { type: "completed"; payload: number };
 type Action = AddAction | DeleteAction | CompletedAction;
 
-type NotesContextType = Note[];
+type NotesContextType = NoteType[];
 type NotesDispatchContextType = ActionDispatch<[Action]>;
 
 const NotesContext = createContext<NotesContextType>({} as NotesContextType);
@@ -29,7 +22,7 @@ const NotesDispatchContext = createContext<NotesDispatchContextType>(
   {} as NotesDispatchContextType
 );
 
-function noteReducer(notes: Note[], { type, payload }: Action) {
+function noteReducer(notes: NoteType[], { type, payload }: Action) {
   switch (type) {
     case "add": {
       return [...notes, payload];

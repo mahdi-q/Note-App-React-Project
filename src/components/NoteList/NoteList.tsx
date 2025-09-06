@@ -1,23 +1,23 @@
 import { useNotes, useNotesDispatch } from "../../contexts/NotesCotext";
 import noteListStyles from "./noteList.module.css";
-import noteItemStyles from "./noteItem.module.css";
+import type { SortByType } from "../../types/SortByType";
 
-function NoteList({ sortBy }) {
+function NoteList({ sortBy }: { sortBy: SortByType }) {
   const notes = useNotes();
 
   let sortedNotes = notes;
 
   if (sortBy === "latest")
     sortedNotes = [...notes].sort(
-      (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
+      (a, b) =>
+        new Date(b.createdAt).getDate() - new Date(a.createdAt).getDate()
     );
-
-  if (sortBy === "earliest")
+  else if (sortBy === "earliest")
     sortedNotes = [...notes].sort(
-      (a, b) => new Date(a.createdAt) - new Date(b.createdAt)
+      (a, b) =>
+        new Date(a.createdAt).getDate() - new Date(b.createdAt).getDate()
     );
-
-  if (sortBy === "completed")
+  else if (sortBy === "completed")
     sortedNotes = [...notes].sort(
       (a, b) => Number(a.completed) - Number(b.completed)
     );
@@ -33,7 +33,12 @@ function NoteList({ sortBy }) {
 
 export default NoteList;
 
-function NoteItem({ note }) {
+// Note Item component
+
+import noteItemStyles from "./noteItem.module.css";
+import type { NoteType } from "../../types/NoteType";
+
+function NoteItem({ note }: { note: NoteType }) {
   const dispatch = useNotesDispatch();
 
   return (
@@ -65,8 +70,8 @@ function NoteItem({ note }) {
               dispatch({ type: "completed", payload: noteId });
             }}
             type="checkbox"
-            name={note.id}
-            id={note.id}
+            name={String(note.id)}
+            id={String(note.id)}
             value={note.id}
             checked={note.completed}
           ></input>
